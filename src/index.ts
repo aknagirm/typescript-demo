@@ -1,36 +1,49 @@
-let character: string = 'mario';
-let age: number;
-let isLoggedIn: boolean;
+// classes
+class Invoice {
+  // readonly client: string;
+  // private details: string;
+  // public amount: number;
 
-// age = 'luigi';
-age = 30;
+  constructor(
+    readonly client: string, 
+    private details: string, 
+    public amount: number,
+  ){}
 
-// isLoggedIn = 25;
-isLoggedIn = true;
+  format() {
+    return `${this.client} owes £${this.amount} for ${this.details}`;
+  }
+}
 
-// arrays
-let ninjas: string[] = [];
+const invOne = new Invoice('mario', 'work on the mario website', 250);
+const invTwo = new Invoice('luigi', 'work on the luigi website', 300);
 
-ninjas.push('ryu');
-ninjas.push('chun-li');
-console.log(ninjas);
+let invoices: Invoice[] = [];
+invoices.push(invOne)
+invoices.push(invTwo);
 
-// union types
-let mixed: (string|number|boolean)[] = [];
-mixed.push('hello');
-mixed.push(false);
-mixed.push(20);
-console.log(mixed);
+invoices.forEach(inv => {
+  console.log(inv.client, /*inv.details,*/ inv.amount, inv.format());
+})
 
-let uid: string|number;
 
-// objects
-let ninjaOne: object;
-ninjaOne = { name: 'yoshi', age: 30 };
 
-let ninjaTwo: {
-  name: string,
-  age: number,
-  beltColour: string
-};
-ninjaTwo = { name: 'ken', age: 20, beltColour: 'black' };
+const form = document.querySelector('.new-item-form') as HTMLFormElement;
+console.log(form.children);
+
+// inputs
+const type = document.querySelector('#type') as HTMLInputElement;
+const tofrom = document.querySelector('#tofrom') as HTMLInputElement;
+const details = document.querySelector('#details') as HTMLInputElement;
+const amount = document.querySelector('#amount') as HTMLInputElement;
+
+form.addEventListener('submit', (e: Event) => {
+  e.preventDefault();
+
+  console.log(
+    type.value, 
+    tofrom.value, 
+    details.value, 
+    amount.valueAsNumber
+  );
+});
