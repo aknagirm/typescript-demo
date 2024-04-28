@@ -1,1 +1,6 @@
-console.log('hi')
+var character = 'Mriganka';
+console.log(character);
+var inputs = document.querySelectorAll('input');
+inputs.forEach(function (input) {
+    console.log(input);
+});
