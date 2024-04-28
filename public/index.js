@@ -1,24 +1,25 @@
-var character = 'mario';
-var age;
-var isLoggedIn;
+"use strict";
+let character = 'mario';
+let age;
+let isLoggedIn;
 // age = 'luigi';
 age = 30;
 // isLoggedIn = 25;
 isLoggedIn = true;
 // arrays
-var ninjas = [];
+let ninjas = [];
 ninjas.push('ryu');
 ninjas.push('chun-li');
 console.log(ninjas);
 // union types
-var mixed = [];
+let mixed = [];
 mixed.push('hello');
 mixed.push(false);
 mixed.push(20);
 console.log(mixed);
-var uid;
+let uid;
 // objects
-var ninjaOne;
+let ninjaOne;
 ninjaOne = { name: 'yoshi', age: 30 };
-var ninjaTwo;
+let ninjaTwo;
 ninjaTwo = { name: 'ken', age: 20, beltColour: 'black' };
